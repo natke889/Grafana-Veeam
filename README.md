@@ -82,5 +82,6 @@ $ docker load --output grafana-veeam-influxdb.tar
 
 ## Screenshots
 *Grafana Dashboard for Veeam Enterprise Manager*
+
 ![Grafana Dashboard for Veeam Enterprise Manager](https://i.postimg.cc/8z2bkgsV/5.png)
 
