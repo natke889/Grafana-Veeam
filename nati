@@ -1,0 +1,9 @@
+docker build -t hello-cron .
+
+docker run -d --name hello-cron hello-cron
+
+docker exec -it hello-cron /bin/bash
+
+docker run -d --name hello-cron hello-cron
+
+docker exec -it hello-cron /bin/bash
