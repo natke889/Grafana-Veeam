@@ -64,20 +64,20 @@ The following stages need to be taken in order to pull the docker images and loa
 pull the image on a machine with internet access.
 
 $ docker pull natke889/grafana-veeam-collector:1.0
-$ docker pull natke889/grafana-veeam-grafana:1.0
-$ docker pull natke889/grafana-veeam-influxdb:1.0
+$ docker pull influxdb:1.8.3
+$ docker pull grafana/grafana:7.3.5
 
 save that image to a .tar files.
 
 $ docker save --output grafana-veeam-collector.tar natke889/grafana-veeam-collector:1.0
-$ docker save --output grafana-veeam-grafana.tar natke889/grafana-veeam-grafana:1.0
-$ docker save --output grafana-veeam-influxdb.tar natke889/grafana-veeam-influxdb:1.0
+$ docker save --output influxdb.tar influxdb:1.8.3
+$ docker save --output grafana.tar grafana/grafana:7.3.5
 
 copy those files to any machine and load the .tar files to docker with the docker compose command.
 
-$ docker load --output grafana-veeam-collector.tar
-$ docker load --output grafana-veeam-grafana.tar
-$ docker load --output grafana-veeam-influxdb.tar
+$ docker load --input grafana-veeam-collector.tar
+$ docker load --input influxdb.tar
+$ docker load --input grafana.tar
 ~~~~
 
 ## Screenshots
