@@ -21,7 +21,7 @@
 # Configurations
 ##
 # Endpoint URL for InfluxDB
-veeamInfluxDBURL="http://${PROJ_NAME}-influxdb" #Your InfluxDB Server, http://FQDN or https://FQDN if using SSL
+veeamInfluxDBURL="http://grafana-veeam-influxdb" #Your InfluxDB Server, http://FQDN or https://FQDN if using SSL
 veeamInfluxDBPort="8086" #Default Port
 veeamInfluxDB="db" #Default Database
 
