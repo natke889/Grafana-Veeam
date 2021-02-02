@@ -41,7 +41,7 @@ git clone https://github.com/natke889/Grafana-Veeam.git
 cd Grafana-Veeam
 ~~~~
 
-Edit the .env file and set the vcenter info.
+Edit the .env file and set the veeam info.
 ~~~~
 vi .env
 ~~~~
