@@ -65,6 +65,12 @@ services:
     volumes:
       - ./collector/veeam_enterprisemanager.sh:/app/veeam_enterprisemanager.sh
       - ./collector/veeam-cron:/etc/cron.d/veeam-cron
+    environment:
+      - INFLUXDB_DB=db
+      - PROJ_NAME=${PROJ_NAME}
+      - VEEAM_IP=${VEEAM_IP}
+      - VEEAM_USER=${VEEAM_USER}
+      - VEEAM_PASS=${VEEAM_PASS}
 
 networks:
   grafana-veeam:

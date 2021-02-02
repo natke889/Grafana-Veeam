@@ -21,17 +21,17 @@
 # Configurations
 ##
 # Endpoint URL for InfluxDB
-veeamInfluxDBURL="http://grafana-veeam-influxdb" #Your InfluxDB Server, http://FQDN or https://FQDN if using SSL
+veeamInfluxDBURL="http://${PROJ_NAME}-influxdb" #Your InfluxDB Server, http://FQDN or https://FQDN if using SSL
 veeamInfluxDBPort="8086" #Default Port
-veeamInfluxDB="db" #Default Database
+veeamInfluxDB="${INFLUXDB_DB}" #Default Database
 
 
 # Endpoint URL for login action
-veeamUsername="vagrant" #Your username, if using domain based account, please add it like user@domain.com (if you use domain\account it is not going to work!)
-veeamPassword="vagrant"
+veeamUsername="${VEEAM_USER}" #Your username, if using domain based account, please add it like user@domain.com (if you use domain\account it is not going to work!)
+veeamPassword="${VEEAM_PASS}"
 veeamJobSessions="100"
 veeamAuth=$(echo -ne "$veeamUsername:$veeamPassword" | base64);
-veeamRestServer="192.168.65.222"
+veeamRestServer="${VEEAM_IP}"
 veeamRestPort="9398" #Default Port
 veeamSessionId=$(curl -X POST "https://$veeamRestServer:$veeamRestPort/api/sessionMngr/?v=latest" -H "Authorization:Basic $veeamAuth" -H "Content-Length: 0" -H "Accept: application/json" -k --silent | awk 'NR==1{sub(/^\xef\xbb\xbf/,"")}1' | jq --raw-output ".SessionId")
 veeamXRestSvcSessionId=$(echo -ne "$veeamSessionId" | base64);
